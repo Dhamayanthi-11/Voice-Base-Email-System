@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Based Email System For Visually Impaired</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 15px;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            background-color: #6a5acd;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: rgba(50, 50, 50, 0.8);
+            border-radius: 10px;
+        }
+        .slide img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        .slide-text {
+            width: 45%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .hero {
+            padding: 50px;
+            text-align: center;
+            background: rgba(50, 50, 50, 0.8);
+            display: inline-block;
+            margin: 50px auto;
+            border-radius: 10px;
+            padding: 30px;
+        }
+        .hero h1 {
+            font-size: 36px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+        .cta-buttons {
+            margin-top: 20px;
+        }
+        .cta-buttons .btn {
+            margin: 10px;
+            font-size: 18px;
+            padding: 12px 20px;
+            border-radius: 8px;
+        }
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div><strong>Empowering the Visually Impaired with Voice</strong></div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn">Login</a>
+            <a href="signup.html" class="btn">Sign Up</a>
+        </div>
+    </header>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <div class="slide-text">
+                    <h2>Seamless Voice-Based Email System</h2>
+                    <p>Experience a new way of managing emails through voice commands, making it accessible for visually impaired users.</p>
+                </div>
+                <img src="Slider1.jpg" alt="Accessible Email">
+            </div>
+            <div class="slide">
+                <div class="slide-text">
+                    <h2>Secure Login with Face Recognition</h2>
+                    <p>Enhanced security with face recognition technology, ensuring safe and seamless access to your emails.</p>
+                </div>
+                <img src="Slider2.webp" alt="Face Recognition">
+            </div>
+            <div class="slide">
+                <div class="slide-text">
+                    <h2>Simple and User-Friendly Interface</h2>
+                    <p>Easy navigation and intuitive design, making email communication effortless for everyone.</p>
+                </div>
+                <img src="Slider3.webp" alt="Easy to Use">
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <h1>A Voice-Based Mail System with Face Recognition for Seamless Communication</h1>
+        <p>Experience an accessible and innovative email system designed for visually impaired individuals. With advanced voice commands and secure face recognition, sending and receiving emails has never been easier.</p>
+    </section>
+    <div class="cta-buttons">
+        <a href="signup.html" class="btn" style="background-color: #ff9900;">Get Started</a>
+        <a href="features.html" class="btn" style="background-color: #007bff;">Learn More</a>
+    </div>
+
+    <footer class="footer">&copy; 2025 Empowering the Visually Impaired with Voice</footer>
+
+    <script>
+        let index = 0;
+        function moveSlide() {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            index = (index + 1) % totalSlides;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+        setInterval(moveSlide, 3000);
+    </script>
+</body>
+</html>

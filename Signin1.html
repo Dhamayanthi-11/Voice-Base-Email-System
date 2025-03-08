@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Email Sign-In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .container {
+            background: white;
+            width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background: purple;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: darkmagenta;
+        }
+        .link {
+            color: blue;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+        video {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="container">
+        <h2>Sign in to Your Email</h2>
+        <p>Accessible login for blind users</p>
+        <input type="text" placeholder="Username, email or mobile" aria-label="Enter Username, email or mobile">
+        <button class="btn">Next</button>
+        <a href="#" class="link">Forgotten username?</a>
+        <button class="btn" style="background: gray; margin-top: 10px;">Create an account</button>
+        <h3>Face Recognition Login</h3>
+        <video id="video" autoplay></video>
+        <button class="btn" onclick="capturePhoto()">Login with Face</button>
+    </div>
+    <script>
+        async function startCamera() {
+            const video = document.getElementById('video');
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+            } catch (error) {
+                console.error('Error accessing the camera', error);
+            }
+        }
+        function capturePhoto() {
+            alert('Face recognized. Logging in...');
+        }
+        window.onload = startCamera;
+    </script>
+</body>
+</html>
